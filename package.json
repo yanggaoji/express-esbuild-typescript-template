@@ -1,0 +1,37 @@
+{
+  "name": "express-esbuild-typescript-template",
+  "version": "1.0.0",
+  "description": "A template for building Express applications with TypeScript and esbuild",
+  "main": "dist/index.js",
+  "scripts": {
+    "build": "node scripts/build.js",
+    "start": "node dist/index.js",
+    "dev": "node scripts/dev.js"
+  },
+  "keywords": [
+    "express",
+    "typescript",
+    "esbuild",
+    "template",
+    "node"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "helmet": "^8.1.0"
+  },
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^5.0.1",
+    "@types/node": "^22.15.12",
+    "chokidar": "^4.0.3",
+    "esbuild": "^0.25.4",
+    "esbuild-node-externals": "^1.18.0",
+    "nodemon": "^3.1.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.8.3"
+  }
+}
