@@ -5,26 +5,26 @@ import routes from "./routes";
 
 const app = express();
 
-// 中间件
+// Middleware
 app.use(helmet());
 app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-// 路由
+// Routes
 app.use("/api", routes);
 
-// 根路由
+// Root route
 app.get("/", (req: Request, res: Response) => {
   res.send("Express TypeScript API is running!");
 });
 
-// 404 处理
+// 404 Handler
 app.use((req: Request, res: Response) => {
   res.status(404).json({ message: "Not found" });
 });
 
-// 错误处理
+// Error handler
 app.use((err: Error, req: Request, res: Response, next: NextFunction) => {
   console.error("Error:", err);
   res.status(500).json({ message: "Internal server error" });

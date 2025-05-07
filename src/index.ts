@@ -1,7 +1,7 @@
 import dotenv from "dotenv";
 import app from "./app";
 
-// 加载环境变量
+// Load environment variables
 dotenv.config();
 
 const PORT = process.env.PORT || 3000;

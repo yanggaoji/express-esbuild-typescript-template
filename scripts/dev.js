@@ -5,7 +5,7 @@ const chokidar = require("chokidar");
 
 let nodeProcess = null;
 
-// 终止进程
+// Kill the process
 function killProcess() {
   if (nodeProcess) {
     nodeProcess.kill();
@@ -13,13 +13,13 @@ function killProcess() {
   }
 }
 
-// 启动应用
+// Start the application
 function startApp() {
   nodeProcess = spawn("node", ["dist/index.js"], { stdio: "inherit" });
   console.log("App started!");
 }
 
-// 开发构建
+// Development build
 async function devBuild() {
   try {
     await esbuild.build({
@@ -36,7 +36,7 @@ async function devBuild() {
     });
     console.log("Build completed");
 
-    // 重启应用
+    // Restart the application
     killProcess();
     startApp();
   } catch (error) {
@@ -44,7 +44,7 @@ async function devBuild() {
   }
 }
 
-// 监听文件变化
+// Watch for file changes
 chokidar
   .watch("src", {
     persistent: true,
@@ -56,10 +56,10 @@ chokidar
     devBuild();
   });
 
-// 初始构建并启动
+// Initial build and start
 devBuild();
 
-// 处理进程终止
+// Handle process termination
 process.on("SIGINT", () => {
   killProcess();
   process.exit(0);

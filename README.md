@@ -1,6 +1,7 @@
-# create-express-esbuild
+# express-esbuild-typescript-template
 
-A simple Express.js application bundled with esbuild.
+A minimal template for building a TypeScript-based Express application using esbuild for fast builds and hot reloading.
+This template is designed to be simple and easy to use, making it a great starting point for your next Express project.
 
 ## Getting Started
 
